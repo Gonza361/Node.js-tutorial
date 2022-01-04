@@ -187,9 +187,41 @@ const readStream = fs.createReadStream('./example2.txt.gz','utf8');
 const writeStream = fs.createWriteStream('uncompressed.txt');
 readStream.pipe(gunzip).pipe(writeStream);
 */
+
+
 //Creating a Http server using the http module
+/*const http = require('http');
+const server = http.createServer((req,res)=>{
+    if(req.url === '/') {
+        res.write('Hello World from node.js'); //Response from the webserver
+        res.end(); //Sending the response
+    }
+    else {
+        res.write('using some other domain');
+        res.end();
+    }
+}); 
+server.listen('3000');//What port is gonna listen for the request, localhost:3000, on browser
+*/
+
+//Serving static files with Http and File system modules
+/*const http = require('http');
+const fs = require('fs');
+http.createServer((req,res)=>{
+    const readStream = fs.createReadStream('./static/index.html');
+    res.writeHead(200,{'Content-type' : 'text/html'}); //application/json or image/png
+    readStream.pipe(res);
+}).listen(3000);*/
 
 
+//Create package.json using npm init (holds metadata from the project, name, version etc...)
+//use 'npm init' on terminal
+
+//Installing packages using nom, node package manager, reusable code that we can include in our own application, folder with one or mode modules within it
+//https://www.npmjs.com/ for example npm install lodash on terminal or npm uninstall lodash
+/*const _ = require('lodash');
+let example = _.fill([1,2,3,4,5], "banana", 1, 4);
+console.log(example);*/
 
 
 
