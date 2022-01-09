@@ -224,5 +224,50 @@ let example = _.fill([1,2,3,4,5], "banana", 1, 4);
 console.log(example);*/
 
 
+//Semantic versioning / allows us to know what changes has been made in each version
+//"version": "^1.0.0", major (breaking change, not compatible with the code of the previous versions), minor (new functionality, non breaking change update), patch (bug fixes)
+// ^ you don't want major updates
+// ~ you only want patch updates   
+// If none of before then you will stick at the actual version
+
+
+//Getting started with express (public available package within nodejs) web framework
+// npm init (creating json file) --yes(for skipping the configuration)
+// npm install express
+//Working with express get requests
+//Serving static files with express
+
+/*const express = require('express');
+const path = require('path');
+const app = express();
+app.use('/public',express.static(path.join(__dirname,'static'))); //using middleware, setting an alias for the static folder, we don't want other people to know the real name of the folder
+app.get('/',(req,res) => {
+    res.send('Hello World');
+    res.sendFile(path.join(__dirname,'static','index.html'));
+});
+app.listen(3000);*/
+
+
+/*app.get('/example',(req,res) => {
+    res.send('hitting example route');
+});
+//http://localhost:3000/example/pedro/24?tutorial=paramstutorial&sort=byage
+app.get('/example/:name/:age',(req,res) => {
+    console.log(req.params); //you should use route parameters when you must have that data
+    console.log(req.query); //you should use query parameters for optional parameters
+    res.send(req.params.name + " : " + req.params.age);
+});*/
+
+
+//Http post request w/ express and body parser module
+
+
+
+
+
+
+
+
+
 
 
